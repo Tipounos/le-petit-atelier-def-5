@@ -1694,74 +1694,66 @@ ul {
 
 /* Galeries */
 
-.galerie-container {
+.galerie {
   width: 100%;
   margin: auto;
   margin-top: calc(var(--navbar-h) + 20px);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
-/* Dropdown */
-.dropdown {
-  position: relative;
-  margin-bottom: 30px;
-  width: 70%;
+.galerie h2 {
+    color: var(--accent);
+    margin-left: 40px;
+    font-size: 1.3rem;
 }
 
-.dropdown-btn {
+.galerie__grid:not(.active) {
+    transform: scale(0);
+    opacity: 0;
+    height: 0;
+    width: 0;
+    translate: 0px 50px;
+}
+
+.galerie__grid.active {
+    width: 100%;
+    height: auto;
+    column-width: 200px;
+    column-gap: 16px;
+    padding: 16px;
+    transform: scale(1);
+    opacity: 1;
+    position: relative;
+    translate: 0;
+}
+
+.galerie__grid {
+    transition: opacity var(--transition), translate var(--transition);
+}
+
+.galerie__img {
   width: 100%;
-  padding: 12px;
-  background: var(--bg-light);
-  border: none;
-  color: var(--accent);
-  cursor: pointer;
-  border-radius: 8px;
-  text-align: left;
-}
-
-.dropdown-menu {
-  position: absolute;
-  width: 100%;
-  background: var(--bg-light);
-  border-radius: 8px;
-  margin-top: 5px;
-  display: none;
-  overflow: hidden;
-}
-
-.dropdown.active .dropdown-menu {
+  margin-bottom: 16px;
+  border-radius: 12px;
   display: block;
+  break-inside: avoid; /* super important */
 }
 
-.dropdown-item {
-  padding: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-  color: var(--text-light);
+.galerie__icon {
+    fill: var(--accent);
+    width: 1.3rem;
+    height: 1.3rem;
+    transition: 0.2s ease-out;
 }
 
-.dropdown-item:hover {
-  background: var(--bg);
-  color: var(--white);
+.galerie__titles.active .galerie__icon{
+    transform: rotate(90deg);
 }
 
-/* Sections */
-.galerie-section {
-  display: none;
-  padding: 20px;
-  background: var(--bg);
-  border-radius: 10px;
-  animation: fade 0.3s ease;
-  width: 90vw;
-}
-
-.galerie-section.active {
-  display: block;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.galerie__titles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    width: fit-content;
 }
