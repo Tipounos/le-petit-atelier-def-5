@@ -347,38 +347,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Galerie
 
-const dropdown = document.querySelector(".dropdown");
-const btn = document.querySelector(".dropdown-btn");
-const items = document.querySelectorAll(".dropdown-item");
-const sections = document.querySelectorAll(".galerie-section");
+const galerieDropdowns = document.querySelectorAll(".galerie__titles")
 
-document.addEventListener("DOMContentLoaded", () => {
-  const defaultItem = document.querySelector('[data-target="particuliers"]');
-  defaultItem.click();
-});
-
-// ouvrir / fermer dropdown
-btn.addEventListener("click", () => {
-  dropdown.classList.toggle("active");
-});
-
-// sélectionner une option
-items.forEach(item => {
-  item.addEventListener("click", () => {
-    const target = item.dataset.target;
-
-    // changer texte bouton
-    btn.textContent = item.textContent;
-
-    // fermer menu
-    dropdown.classList.remove("active");
-
-    // cacher toutes les sections
-    sections.forEach(section => {
-      section.classList.remove("active");
-    });
-
-    // afficher la bonne
-    document.getElementById(target).classList.add("active");
-  });
-});
+galerieDropdowns.forEach((e) => {
+  e.addEventListener("click", () => {
+    let dropdownTarget = e.dataset["dropdownTarget"]    
+    e.classList.toggle("active")
+    document.querySelector(`#${dropdownTarget}`).classList.toggle("active")
+  })
+})
