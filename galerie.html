@@ -65,27 +65,22 @@
     <a href="devis.html" class="btn btn--primary" data-i18n="nav_cta">Demander un devis</a>
   </div>
 
-    <div class="galerie-container">
+    <div class="galerie">
+        <section class="galerie__sect" id="particuliers">
+            <div class="galerie__titles" id="particuliers-title" data-dropdown-target="particuliers-grid">
+                <h2>Particuliers</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1rem" height="1rem" class="galerie__icon">
+                    <path d="M15.75,9.525,11.164,4.939A1.5,1.5,0,0,0,9.043,7.061l4.586,4.585a.5.5,0,0,1,0,.708L9.043,16.939a1.5,1.5,0,0,0,2.121,2.122l4.586-4.586A3.505,3.505,0,0,0,15.75,9.525Z"/>
+                </svg>                
+            </div>
 
-    <!-- Dropdown -->
-    <div class="dropdown">
-        <button class="dropdown-btn">Choisir une catégorie</button>
-        <div class="dropdown-menu">
-        <div class="dropdown-item" data-target="particuliers">Particuliers</div>
-        <div class="dropdown-item" data-target="mariage">Mariage</div>
-        <div class="dropdown-item" data-target="anniversaires">Anniversaires</div>
-        <div class="dropdown-item" data-target="diners">Dîners privés</div>
-        <div class="dropdown-item" data-target="entreprises">Entreprises</div>
-        </div>
-    </div>
-
-    <!-- Sections -->
-    <div id="particuliers" class="galerie-section">Galerie Particuliers</div>
-    <div id="mariage" class="galerie-section">Galerie Mariage</div>
-    <div id="anniversaires" class="galerie-section">Galerie Anniversaires</div>
-    <div id="diners" class="galerie-section">Galerie Dîners privés</div>
-    <div id="entreprises" class="galerie-section">Galerie Entreprises</div>
-
+            <div class="galerie__grid" id="particuliers-grid">
+                <img src="assets/images/card-cocktails.png" alt="" class="galerie__img">
+                <img src="assets/images/card-diners.png" alt="" class="galerie__img">
+                <img src="assets/images/card-entreprise.png" alt="" class="galerie__img">
+                <img src="assets/images/card-mariages.png" alt="" class="galerie__img">
+            </div>
+        </section>
     </div>
 
 
